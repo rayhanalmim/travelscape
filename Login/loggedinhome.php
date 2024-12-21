@@ -282,7 +282,7 @@ session_start();
                 </div>
                 <p>Booking my dream trip to the serene backwaters of Kerala was a breeze with Travelscapes – seamless and stress-free! </p>
                 <div class="user">
-                    <img src="./images/pic-1.jpg" alt="atharva pfp">
+                    <img src="../images/pic-1.jpg" alt="atharva pfp">
                     <div class="user-info">
                         <h3>Rayhan</h3>
                         <span>Dhaka</span>
@@ -301,7 +301,7 @@ session_start();
                 </div>
                 <p>Thanks to Travelscapes, I explored the majestic beauty of Rajasthan with ease, and the deals were unbeatable!</p>
                 <div class="user">
-                    <img src="./images/pic-2.png" alt="Yash pfp">
+                    <img src="../images/pic-2.png" alt="Yash pfp">
                     <div class="user-info">
                         <h3>Nasrin</h3>
                         <span>Dhaka</span>
@@ -320,7 +320,7 @@ session_start();
                 </div>
                 <p>Made my adventure to the mesmerizing Himalayan mountains unforgettable, with expert guidance and fantastic itineraries</p>
                 <div class="user">
-                    <img src="./images/pic-3.jpg" alt="Tejas pfp">
+                    <img src="../images/pic-3.jpg" alt="Tejas pfp">
                     <div class="user-info">
                         <h3>Alvi</h3>
                         <span>Chattogram</span>

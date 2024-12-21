@@ -117,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <form method="POST">
                     <h1>Sign Up</h1>
                     <div class="social-container">
-                        <a href="#" class="social"><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/rayhanalmim" class="social"><i class="fab fa-github"></i></a>
                     </div>
                     <span>Or use your Email for registration</span>
                     <?php if (isset($signupError)) echo "<p class='text-danger'>$signupError</p>"; ?>
@@ -142,7 +142,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <form method="POST">
                     <h1>Login</h1>
                     <div class="social-container">
-                        <a href="#" class="social"><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/rayhanalmim" class="social"><i class="fab fa-github"></i></a>
                     </div>
                     <?php if (isset($loginError)) echo "<p class='text-danger'>$loginError</p>"; ?>
                     <?php if (isset($loginSuccess)) echo "<p class='text-success'>$loginSuccess</p>"; ?>
