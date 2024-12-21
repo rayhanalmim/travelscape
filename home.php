@@ -128,7 +128,7 @@
                 </div>
                 <div class="content">
                     <h3>Rangamati</h3>
-                    <div class="price">Rs 35000</div>
+                    <div class="price">BDT 35000</div>
                 </div>
             </div>
 
@@ -143,7 +143,7 @@
                 </div>
                 <div class="content">
                     <h3>Bandarban</h3>
-                    <div class="price">Rs 40000</div>
+                    <div class="price">BDT 40000</div>
                 </div>
             </div>
 
@@ -158,7 +158,7 @@
                 </div>
                 <div class="content">
                     <h3>Sajek Valley</h3>
-                    <div class="price">Rs 50000 </div>
+                    <div class="price">BDT 50000 </div>
                 </div>
             </div>
 
@@ -173,7 +173,7 @@
                 </div>
                 <div class="content">
                     <h3>Sundarbans</h3>
-                    <div class="price">Rs 30000 </div>
+                    <div class="price">BDT 30000 </div>
                 </div>
             </div>
 
@@ -188,7 +188,7 @@
                 </div>
                 <div class="content">
                     <h3>Kuakata</h3>
-                    <div class="price">Rs 21000</div>
+                    <div class="price">BDT 21000</div>
                 </div>
             </div>
 
@@ -203,7 +203,7 @@
                 </div>
                 <div class="content">
                     <h3>Cox's Bazar</h3>
-                    <div class="price">Rs 15000</div>
+                    <div class="price">BDT 15000</div>
                 </div>
             </div>
 
@@ -218,7 +218,7 @@
                 </div>
                 <div class="content">
                     <h3>Sylhet</h3>
-                    <div class="price">Rs 55000</div>
+                    <div class="price">BDT 55000</div>
                 </div>
             </div>
 
@@ -233,7 +233,7 @@
                 </div>
                 <div class="content">
                     <h3>Srimangal</h3>
-                    <div class="price">Rs 15000</div>
+                    <div class="price">BDT 15000</div>
                 </div>
             </div>
 
@@ -248,7 +248,7 @@
                 </div>
                 <div class="content">
                     <h3>Paharpur</h3>
-                    <div class="price">Rs 15000</div>
+                    <div class="price">BDT 15000</div>
                 </div>
             </div>
 
