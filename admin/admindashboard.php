@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="./css/admindashboard.css">
+    <link rel="stylesheet" type="text/css" href="../css/admindashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Admin Panel</title>
 </head>
@@ -66,7 +66,7 @@ session_start();
     </div>
 
     <footer class="footer">
-        <p>&copy; 2023 Admin Panel</p>
+        <p>&copy; 2024 Admin Panel</p>
     </footer>
 
     <script>

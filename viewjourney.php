@@ -87,7 +87,7 @@ if ($result->num_rows > 0) {
     ?>
     </div>
     <footer>
-    <p>&copy; 2023 Travelscapes. All rights reserved.</p>
+    <p>&copy; 2024 Travelscapes. All rights reserved.</p>
 </footer>
 
 </body>

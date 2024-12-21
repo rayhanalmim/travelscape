@@ -1,9 +1,9 @@
 <?php
 // Database connection parameters
-$servername = "localhost"; // Change this to your database server name
-$username = "root";        // Change this to your database username
-$password = "";            // Change this to your database password
-$dbname = "travelscapes";  // Change this to your database name
+$servername = "localhost"; 
+$username = "root";        
+$password = "";            
+$dbname = "travelscapes";  
 
 // Create a connection to the database
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -50,7 +50,7 @@ $conn->close();
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="css/booking.css">
+    <link rel="stylesheet" href="./css/bookingform.css">
     <title>Booking Page</title>
 </head>
 <body>
@@ -61,7 +61,7 @@ $conn->close();
             <p>Hotel Name: <?php echo $hotelDetails['hotelName']; ?></p>
         </div>
 
-        <form method="post" action="payment.php">
+        <form method="post" action="./Payment Interface/payment.html">
             <h2>Booking Form</h2>
             <input type="text" name="name" placeholder="Name" required><br>
             <input type="text" name="username" placeholder="Username" required><br>
@@ -70,7 +70,7 @@ $conn->close();
             <input type="date" name="dob" id="dob" required><br>
             <input type="tel" name="contact" placeholder="Contact Number" required><br>
 
-            <p>Cost: Rs. <span id="calculatedCost"><?php echo $initialCost; ?></span></p>
+            <p>Cost: BDT. <span id="calculatedCost"><?php echo $initialCost; ?></span></p>
 
             <button type="submit" name="proceed" value="Proceed">Proceed for Payment</button>
         </form>

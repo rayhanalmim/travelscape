@@ -7,6 +7,7 @@ $dbname = "travelscapes";
 // Create a connection to the database
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -14,34 +15,39 @@ if ($conn->connect_error) {
 // Initialize variables for journey data
 $city = $region = $season = $days = $cost = "";
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve journey data from the form if available
-    $city = isset($_POST["city"]) ? $_POST["city"] : "";
-    $region = isset($_POST["region"]) ? $_POST["region"] : "";
-    $season = isset($_POST["season"]) ? $_POST["season"] : "";
-    $days = isset($_POST["days"]) ? $_POST["days"] : "";
-    $cost = isset($_POST["cost"]) ? $_POST["cost"] : "";
+    // Retrieve and sanitize journey data from the form
+    $city = isset($_POST["city"]) ? trim($_POST["city"]) : "";
+    $region = isset($_POST["region"]) ? trim($_POST["region"]) : "";
+    $season = isset($_POST["season"]) ? trim($_POST["season"]) : "";
+    $days = isset($_POST["days"]) ? trim($_POST["days"]) : "";
+    $cost = isset($_POST["cost"]) ? trim($_POST["cost"]) : "";
 
-    // Prepare a SQL statement to insert the journey
-    $sql = "INSERT INTO cities (city, region, season, days, cost) VALUES (?, ?, ?, ?, ?)";
-
-    $stmt = $conn->prepare($sql);
-    if ($stmt) {
-        $stmt->bind_param("sssid", $city, $region, $season, $days, $cost);
-
-        if ($stmt->execute()) {
-            // Insertion was successful
-            echo "Journey added successfully. <a href='adminviewjourneys.php'>Back to journeys</a>";
-            header("location: adminviewjourneys.php");
-        } else {
-            // Error occurred during insertion
-            echo "Error: " . $stmt->error;
-        }
-
-        $stmt->close();
+    // Validate that necessary fields are not empty
+    if (empty($city) || empty($region) || empty($season) || empty($days) || empty($cost)) {
+        echo "All fields are required!";
     } else {
-        echo "Error in the prepared statement: " . $conn->error;
+        // Prepare a SQL statement to insert the journey
+        $sql = "INSERT INTO cities (city, region, season, days, cost) VALUES (?, ?, ?, ?, ?)";
+
+        $stmt = $conn->prepare($sql);
+        if ($stmt) {
+            // Bind parameters: "sssid" means string, string, string, integer, decimal
+            $stmt->bind_param("sssid", $city, $region, $season, $days, $cost);
+
+            if ($stmt->execute()) {
+                // Insertion was successful, redirect
+                header("Location: adminviewjourneys.php");
+                exit; // Make sure to stop further script execution after redirect
+            } else {
+                // Error occurred during insertion
+                echo "Error: " . $stmt->error;
+            }
+
+            $stmt->close();
+        } else {
+            echo "Error in the prepared statement: " . $conn->error;
+        }
     }
 } else {
     echo "Form not submitted.";
@@ -49,4 +55,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
-

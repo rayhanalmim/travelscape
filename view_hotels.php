@@ -152,7 +152,7 @@ Hotels in <?php echo $cityName; ?>
             echo "</td>";
             echo "<td>" . $row['cost'] . "</td>";
             echo "<td>" . $row['ratings'] . "</td>";
-            echo "<td><a href='booking.php?hotel_id=" . $row['hotelid'] . "' class='book-button'>Book Now</a></td>";
+            echo "<td><a href='bookingform.php?hotel_id=" . $row['hotelid'] . "' class='book-button'>Book Now</a></td>";
             echo "</tr>";
         }
 
