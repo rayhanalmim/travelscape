@@ -1,11 +1,9 @@
 <?php
-// Database connection parameters
 $servername = "localhost"; 
 $username = "root";        
 $password = "";            
 $dbname = "travelscapes";  
 
-// Create a connection to the database
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check the connection
@@ -13,10 +11,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Initialize variables
-$cityId = $_GET['city_id']; // Assuming you pass the city ID in the URL
+$cityId = $_GET['city_id']; 
 
-// Fetch the city name
 $cityName = '';
 $citySql = "SELECT city FROM cities WHERE cityid = $cityId";
 $cityResult = $conn->query($citySql);
@@ -26,15 +22,12 @@ if ($cityResult->num_rows > 0) {
     $cityName = $row['city'];
 }
 
-// Fetch hotels in the specified city by name from the database
 $sql = "SELECT * FROM hotels WHERE cityid = $cityId";
 $result = $conn->query($sql);
 
-// Filter variables
 $selectedCost = isset($_POST["cost"]) ? $_POST["cost"] : "All";
 $selectedRatings = isset($_POST["ratings"]) ? $_POST["ratings"] : "All";
 
-// Filter SQL conditions
 $costCondition = "";
 $ratingsCondition = "";
 

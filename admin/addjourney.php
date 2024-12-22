@@ -4,7 +4,6 @@ $username = "root";
 $password = "";
 $dbname = "travelscapes";
 
-// Create a connection to the database
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
@@ -12,11 +11,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Initialize variables for journey data
 $city = $region = $season = $days = $cost = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve and sanitize journey data from the form
     $city = isset($_POST["city"]) ? trim($_POST["city"]) : "";
     $region = isset($_POST["region"]) ? trim($_POST["region"]) : "";
     $season = isset($_POST["season"]) ? trim($_POST["season"]) : "";

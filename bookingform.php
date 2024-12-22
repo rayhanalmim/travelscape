@@ -1,23 +1,18 @@
 <?php
-// Database connection parameters
 $servername = "localhost"; 
 $username = "root";        
 $password = "";            
 $dbname = "travelscapes";  
 
-// Create a connection to the database
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check the connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Retrieve hotel details
-$hotelId = 1; // You should replace this with the actual hotel ID
+$hotelId = 1; 
 $hotelDetails = [];
 
-// Fetch hotel details from the "hotels" table
 $hotelSql = "SELECT * FROM hotels WHERE hotelid = $hotelId";
 $hotelResult = $conn->query($hotelSql);
 
@@ -25,11 +20,9 @@ if ($hotelResult->num_rows > 0) {
     $row = $hotelResult->fetch_assoc();
     $hotelDetails['hotelName'] = $row['hotel'];
     $hotelDetails['hotelCost'] = $row['cost'];
-    // Add more fields as needed
 }
 
-// Fetch city name from the "cities" table
-$cityId = 1; // You should replace this with the actual city ID
+$cityId = 1; 
 $cityName = "";
 
 $citySql = "SELECT city FROM cities WHERE cityid = $cityId";
@@ -40,10 +33,8 @@ if ($cityResult->num_rows > 0) {
     $cityName = $row['city'];
 }
 
-// Calculate initial cost (without tourists and date)
-$initialCost = $hotelDetails['hotelCost'] * 5; // Replace 5 with actual journey days
+$initialCost = $hotelDetails['hotelCost'] * 5; 
 
-// Close the database connection
 $conn->close();
 ?>
 
@@ -77,11 +68,9 @@ $conn->close();
     </div>
 
     <script>
-        // JavaScript to calculate cost based on tourists and days
         const touristsInput = document.getElementById("touristsInput");
         const calculatedCost = document.getElementById("calculatedCost");
 
-        // Initial cost fetched from the server
         let initialCost = <?php echo $initialCost; ?>;
         calculatedCost.textContent = initialCost;
 
@@ -89,7 +78,7 @@ $conn->close();
 
         function calculateCost() {
             const tourists = parseInt(touristsInput.value) || 0;
-            const days = <?php echo $journeyDays; ?>; // Replace with actual journey days from the database
+            const days = <?php echo $journeyDays; ?>; 
 
             const totalCost = initialCost * tourists * days;
             calculatedCost.textContent = totalCost;

@@ -1,22 +1,17 @@
 <?php
-// Database connection parameters
-$servername = "localhost"; // Change this to your database server name
-$username = "root";        // Change this to your database username
-$password = "";            // Change this to your database password
-$dbname = "travelscapes";  // Change this to your database name
+$servername = "localhost"; 
+$username = "root";       
+$password = "";            
+$dbname = "travelscapes";  
 
-// Create a connection to the database
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check the connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Initialize variables
-$cityId = $_GET['city_id']; // Assuming you pass the city ID in the URL
+$cityId = $_GET['city_id']; 
 
-// Fetch city details from the database
 $sql = "SELECT * FROM cities WHERE cityid = $cityId";
 $result = $conn->query($sql);
 
@@ -26,7 +21,6 @@ $folderPath = './Places/';
 $allowedExtensions = array('jpg', 'jpeg', 'png', 'gif');
 $imageArray = array();
 
-// Retrieve image files from the folder
 $files = scandir($folderPath);
 
 foreach ($files as $file) {
@@ -34,7 +28,6 @@ foreach ($files as $file) {
     $extension = strtolower($fileInfo['extension']);
 
     if (in_array($extension, $allowedExtensions)) {
-        // It's an image file, so add it to the array
         $imageArray[] = $folderPath . $file;
     }
 }
@@ -75,7 +68,7 @@ if ($result->num_rows > 0) {
             <p><strong>Region:</strong> <?php echo $region; ?></p>
             <p><strong>Season:</strong> <?php echo $season; ?></p>
             <p><strong>Days:</strong> <?php echo $days; ?></p>
-            <p><strong>Cost:</strong> Rs <?php echo $cost; ?></p>
+            <p><strong>Cost:</strong> BDT <?php echo $cost; ?></p>
         </div>
         <div class="view-hotels-button">
             <a href="view_hotels.php?city_id=<?php echo $cityId; ?>" class="view-button">View Hotels</a>

@@ -10,7 +10,6 @@ if ($_SESSION['status'] == 'loggedin') {
     <link rel="shortcut icon" href="download.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-    <!--Bootstrap CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -31,26 +30,20 @@ if ($_SESSION['status'] == 'loggedin') {
 
 
   <script>
-    // This is the original price
     var originalPrice = <?php echo $baseprice; ?>;
-    var passengers = 1; // Initialize with 1 passenger
+    var passengers = 1; 
 
     document.addEventListener("DOMContentLoaded", function() {
-      // Update total cost when the DOM is ready
       updateTotalCost();
 
-      // Add an event listener to the input field for the number of passengers
       document.getElementById('Pcount').addEventListener("input", updateTotalCost);
     });
 
     function updateTotalCost() {
-      // Get the number of passengers from the input field
       passengers = parseInt(document.getElementById("Pcount").value, 10);
 
-      // Calculate the total cost by multiplying the original price with the number of passengers
       var totalCost = originalPrice * passengers;
 
-      // Display the total cost in the HTML element with the id "total"
       document.getElementById("total").innerHTML = "Total cost: ₹" + totalCost;
     }
   </script>

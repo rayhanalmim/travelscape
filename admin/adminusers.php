@@ -4,15 +4,12 @@ $username = "root";
 $password = "";
 $database = "travelscapes";
 
-// Create a connection
 $conn = new mysqli($servername, $username, $password, $database);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Fetch admin login data
 $sql = "SELECT srno, Admin_Name FROM admin_login";
 $result = $conn->query($sql);
 ?>
